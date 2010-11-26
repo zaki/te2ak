@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+require 'te2ak/te2ak'
+if ARGV.length != 2
+  puts <<-EOF
+  Usage: te2ak <Textexpander Settings File> <Autokey Json file to output>
+  Example: te2ak ~/Dropbox/Textexpander/Settings.textexpander ~/.config/autokey/autokey.json
+EOF
+else
+  TE2AK::Te2Ak.new.run(ARGV[0], ARGV[1])
+end

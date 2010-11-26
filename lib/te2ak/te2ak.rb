@@ -1,13 +1,10 @@
-#!/usr/bin/env ruby
-
+# -*- encoding: utf-8 -*-
 require 'rubygems'
 require 'plist'
-require 'yaml'
 require 'json'
 
 ## Usage:
 ## te2ak Settings.textexpander autokey.json
-# TODO: Gemify
 
 module TE2AK
   class Te2Ak
@@ -78,7 +75,7 @@ module TE2AK
     end
 
     def codify(str)
-      # TODO: %< %> 
+      # TODO: %< %>
 
       jumpback = 0
       if str =~ POSITIONS_REGEX
@@ -145,7 +142,3 @@ module TE2AK
     end
   end
 end
-
-# Process inputfile
-input, output = ARGV[0], ARGV[1]
-TE2AK::Te2Ak.new.run(input, output)
